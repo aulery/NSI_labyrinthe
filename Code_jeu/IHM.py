@@ -72,8 +72,8 @@ class Jeu():
 
     def gerer_evenement(self):
         for event in pygame.event.get(): # on parcours les évenements reçu depuis la dernière mise à jour.
-            if event.type == QUIT: # si on demande aun programme de se fermer.
-                return False# fonction qui vide la mémoire à coder
+            if event.type == QUIT: # si on demande au programme de se fermer.
+                return False # pour faire l'arret
             if event.type == KEYDOWN :
                 if event.key in self.actions :
                     self.actions[event.key](self.carte,self.joueur)
@@ -100,12 +100,12 @@ class Jeu():
         Execution_en_cours = True
         while Execution_en_cours :
             #interception des evenements
-            carte_debut = copy.copy(self.carte)
-            joueur_avant = copy.copy(self.joueur)
+            self.carte.sauver_etat() # pour la gestion des regles
+            self.joueur.sauver_etat() # pour la gestion des regles
             Execution_en_cours = self.gerer_evenement()
             # regles
             for regle in self.regles :
-                regle(carte_debut,self.carte,joueur_avant,self.joueur)
+                regle(self.carte,self.joueur)
             # dessin de la carte
             self.dessiner()
             pygame.display.flip() # mise à jour de l'écran

@@ -11,6 +11,7 @@ class carte() :
         self.Hauteur = Hauteur
         self.Largeur = Largeur
         self.tab = Hauteur*[Largeur*[None]]
+        self.old_tab = self.tab
 
     def modifier_case(self,X,Y,nouvelle_case):
         self.tab[X][Y]= nouvelle_case
@@ -24,3 +25,9 @@ class carte() :
         self.assert_(len(nouvelle_carte) == len(self.tab))
         self.assert_(len(nouvelle_carte[0]) == len(self.tab[0]))
         slef.tab = nouvelle_carte
+
+    def sauver_etat(self):
+        self.old_tab = self.tab
+
+    def annuler_coup(self):
+        self.tab = self.old_tab
