@@ -4,9 +4,7 @@ import os
 import pygame # import total on limitera plus tard les besoins au minimum
 from pygame.locals import * # pas obligatoire mais plus simple
 from Touches import *
-from Carte import carte
-from Joueur import joueur
-import copy
+
 def importer_image_de_fond(nom,repertoire="Images"):
     """ Fonction qui importe une image sans transparence.
     entrée :
@@ -41,6 +39,12 @@ def coller_image(image,largeur,hauteur,fenetre) : # attention l'ordre compte
 
 class Jeu():
     """ Classe qui gere le jeu.
+        elle change l'etat du jeu 25 fois par secondes
+        La boucle de jeu est la suivante :
+        1 - sauvegarder la carte
+        2 - verifier les interactions utilisateurs voir https://www.pygame.org/docs/ref/event.html
+        3 - verifier les règles du jeu. et annuler si besoin
+        4 - afficher la carte puis le joueur.
 
     """
 

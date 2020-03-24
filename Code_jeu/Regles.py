@@ -1,6 +1,5 @@
 # coding: utf8
 # pensez a recopier l'encodage dans chaque fichier Python
-from copy import copy
 def on_ne_sort_pas_de_la_carte(carte_apres,joueur_apres) :
     """
     Fonction qui interdit le mouvement si le joueur depasse les bords de la carte.
