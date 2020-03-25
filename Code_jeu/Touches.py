@@ -1,6 +1,9 @@
 # coding: utf8
 # pensez a recopier l'encodage dans chaque fichier Python
+"""
+Ensemble de fonctions qui definissent le comportement des touches du clavier.
 
+"""
 
 def espace(carte,personnage) :
     """ fonction qui fait une action lorsque l'on appuis sur la barre d'espace """
