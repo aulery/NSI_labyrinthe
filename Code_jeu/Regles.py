@@ -16,3 +16,10 @@ def on_ne_sort_pas_de_la_carte(carte_apres,joueur_apres) :
 
     if on_depasse_sur_X or on_depasse_sur_Y:
         joueur_apres.annuler_coup()
+
+def victoire(carte_apres,joueur_apres) :
+    """
+    Fonction qui donne la victoire quand le joueur touche l'arrivée
+
+    
+    """
