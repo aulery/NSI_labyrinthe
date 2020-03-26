@@ -9,7 +9,7 @@ import os
 import pygame # import total on limitera plus tard les besoins au minimum
 from pygame.locals import * # pas obligatoire mais plus simple
 from Touches import *
-
+from Etat import *
 class Jeu():
     """ Classe qui gere le jeu.
         elle change l'etat du jeu 25 fois par secondes
@@ -48,6 +48,7 @@ class Jeu():
         self.joueur  = le_joueur
         self.regles  = liste_des_regles
         self.Taille_case_pixel = 20
+        self.etat = Etat()
 
         pygame.init()
         pygame.display.set_caption("NSI_Labyrinthe")
@@ -86,12 +87,12 @@ class Jeu():
                 if event.key in self.actions :
                     self.carte.sauver_etat() # pour la gestion des regles
                     self.joueur.sauver_etat() # pour la gestion des regles
-                    self.actions[event.key](self.carte,self.joueur)
+                    self.actions[event.key](self.carte,self.joueur,self.etat)
                     # regles
                     for regle in self.regles :
-                        stop = regle(self.carte,self.joueur)
+                        stop = regle(self.carte,self.joueur,self.etat)
                 print(self.joueur)
-        return True # on continue
+        return self.etat.en_cours # on continue
 
     def dessiner(self):
         """

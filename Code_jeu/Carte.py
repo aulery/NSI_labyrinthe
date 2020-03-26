@@ -8,7 +8,9 @@ class carte() :
     Hauteur taille dans la premiere direction de la carte (en case)
     Largeur taille dans la deuxieme direction de la carte (en case)
 
-    genere :
+    attribue :
+    Hauteur : hauteur de la carte
+    Largeur : largeur de la carte
     tab : un tableau de Hauteur*Largeur cases à None
     """
 
@@ -37,7 +39,7 @@ class carte() :
                 else :
                     chaine_globale +=str(self.tab[i][j])
             chaine_globale += "\n"
-            chaine_globale += "Fin de la carte"
+        chaine_globale += "Fin de la carte"
         return chaine_globale
 
     def modifier_case(self,X,Y,nouvelle_case):
@@ -54,7 +56,8 @@ class carte() :
         self.tab = copy.copy(nouvelle_carte)
 
     def sauver_etat(self):
-        """ fonction qui enregistre la position actuelle. une sauvegarde est faites avant chaque evenement
+        """ fonction qui enregistre la position actuelle.
+        Une sauvegarde est faites avant chaque evenement
         a coupler avec annuler_coup() .
         """
         self.old_tab = self.tab

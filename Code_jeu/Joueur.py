@@ -8,14 +8,23 @@ class joueur():
     var_joueur.X et var_joueur.Y
     """
 
-    def __init__(self, nom,X,Y):
-        """ initialisation rien de special """
+    def __init__(self, nom,X,Y,score = 0):
+        """ initialisation
+        Entrée :
+        * nom : le nom d'un joueur
+        * X : position de depart sur l'axe X
+        * Y : position de depart sur l'axe Y
+        * score : le score de depart du joueur    par default 0
+        """
+
         super(joueur, self).__init__()
         self.nom = nom
         self.X = X
         self.Y = Y
+        self.score =score
         self.old_X = X
         self.old_Y = Y
+
 
     def __str__ (self):
         """ permet de faire print(joueur) directement """

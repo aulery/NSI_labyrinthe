@@ -21,7 +21,7 @@ if __name__ == "__main__" :
     from Joueur import joueur
     from Regles import *
 
-    liste_des_regles = [on_ne_sort_pas_de_la_carte] # attention l'ordre compte
+    liste_des_regles = [on_ne_sort_pas_de_la_carte,victoire] # attention l'ordre compte
     liste_des_images = ['personnage.png'
                         ,'mur.png','fin.png'] # attention l'ordre compte
     Nombre_cases_largeur = 20
@@ -43,11 +43,13 @@ if __name__ == "__main__" :
     la_carte.modifier_case(position_de_depart_X+2,position_de_depart_Y+2,2)
     print(la_carte)
 
+    le_joueur = joueur("player 1 ",position_de_depart_X,position_de_depart_Y,100)
 
-
-    le_joueur = joueur("player 1 ",position_de_depart_X,position_de_depart_Y)
-
-    jeu = Jeu(Nombre_cases_largeur,Nombre_cases_hauteur,la_carte,le_joueur,liste_des_regles,liste_des_images)
+    jeu = Jeu(Nombre_cases_largeur
+             ,Nombre_cases_hauteur
+             ,la_carte,le_joueur
+             ,liste_des_regles
+             ,liste_des_images)
     jeu.lancer_jeu()
 
     del Jeu
