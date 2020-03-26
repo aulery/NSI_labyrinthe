@@ -6,6 +6,7 @@ Ensemble des regles du jeu, tout impact sur le jeu
 dois se faire au travers des classes en argument
 par default il s'agit de carte et joueur
 """
+
 def on_ne_sort_pas_de_la_carte(carte_apres,joueur_apres,etat_du_jeu) :
     """
     Fonction qui interdit le mouvement si le joueur depasse les bords de la carte.

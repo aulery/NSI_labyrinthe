@@ -3,8 +3,7 @@
 class Etat():
     """
     Contient l'etat de la partie
-    basiquement permet juste de savoir
-    si la partie se fini.
+    basiquement permet de savoir si la partie se fini.
 
     """
 

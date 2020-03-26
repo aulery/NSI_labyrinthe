@@ -46,6 +46,10 @@ class joueur():
     def annuler_coup(self):
         """ fonction qui restaure la position sauvegarder lors de l'appel de sauver_etat()
         """
+        if "coup(s) annulé(s)" in self.stats :
+            self.stats["coup annulé"] +=1
+        else :
+            self.stats["coup annulé"] =1
         self.X = self.old_X
         self.Y = self.old_Y
 

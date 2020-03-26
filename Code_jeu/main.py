@@ -40,7 +40,7 @@ if __name__ == "__main__" :
     # le joueur doit être sur une case vide.
     la_carte.modifier_case(position_de_depart_X,position_de_depart_Y,None)
     # le gagne s'il arrive a la position 5 , 5
-    la_carte.modifier_case(position_de_depart_X+2,position_de_depart_Y+2,2)
+    la_carte.modifier_case(position_de_depart_X+2,position_de_depart_Y+3,2)
     print(la_carte)
 
     le_joueur = joueur("player 1 ",position_de_depart_X,position_de_depart_Y,100)
