@@ -8,14 +8,24 @@ class joueur():
     var_joueur.X et var_joueur.Y
     """
 
-    def __init__(self, nom,X,Y):
-        """ initialisation rien de special """
+    def __init__(self, nom,X,Y,score = 0):
+        """ initialisation
+        Entrée :
+        * nom : le nom d'un joueur
+        * X : position de depart sur l'axe X
+        * Y : position de depart sur l'axe Y
+        * stats : statistiques du joueur
+        par default contient un "score" qui par defaut est a 0
+        """
+
         super(joueur, self).__init__()
         self.nom = nom
         self.X = X
         self.Y = Y
+        self.stats ={"score":score}
         self.old_X = X
         self.old_Y = Y
+
 
     def __str__ (self):
         """ permet de faire print(joueur) directement """
@@ -36,6 +46,10 @@ class joueur():
     def annuler_coup(self):
         """ fonction qui restaure la position sauvegarder lors de l'appel de sauver_etat()
         """
+        if "coup(s) annulé(s)" in self.stats :
+            self.stats["coup annulé"] +=1
+        else :
+            self.stats["coup annulé"] =1
         self.X = self.old_X
         self.Y = self.old_Y
 

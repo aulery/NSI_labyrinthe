@@ -1,0 +1,9 @@
+# Genere automatiquement la documentation est la met dans le repertoire doc du jeu
+cd Code_jeu
+pwd
+for fic in *.py; do
+    module="${fic%.py}"
+    py -m pydoc -w $module
+done
+
+mv *.html ../Site_Web/static/Documentation/

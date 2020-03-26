@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html><head><title>Python: module Carte</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+</head><body bgcolor="#f0f0f8">
+
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="heading">
+<tr bgcolor="#7799ee">
+<td valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial">&nbsp;<br><big><big><strong>Carte</strong></big></big></font></td
+><td align=right valign=bottom
+><font color="#ffffff" face="helvetica, arial"><a href=".">index</a><br><a href="file:c%3A%5Cdossier%20synchro%5Censeignement%5C2019-2020%5Cnsi%5Cnsi_labyrinthe%5Ccode_jeu%5Ccarte.py">c:\dossier synchro\enseignement\2019-2020\nsi\nsi_labyrinthe\code_jeu\carte.py</a></font></td></tr></table>
+    <p><tt>#&nbsp;coding:&nbsp;utf8<br>
+#&nbsp;pensez&nbsp;a&nbsp;recopier&nbsp;l'encodage&nbsp;dans&nbsp;chaque&nbsp;fichier&nbsp;Python</tt></p>
+<p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ee77aa">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#ee77aa"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><dl>
+<dt><font face="helvetica, arial"><a href="builtins.html#object">builtins.object</a>
+</font></dt><dd>
+<dl>
+<dt><font face="helvetica, arial"><a href="Carte.html#carte">carte</a>
+</font></dt></dl>
+</dd>
+</dl>
+ <p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#ffc8d8">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#000000" face="helvetica, arial"><a name="carte">class <strong>carte</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
+    
+<tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
+<td colspan=2><tt><a href="#carte">carte</a>(Hauteur,&nbsp;Largeur)<br>
+&nbsp;<br>
+classe&nbsp;qui&nbsp;contient&nbsp;la&nbsp;description&nbsp;de&nbsp;la&nbsp;<a href="#carte">carte</a>.<br>
+Entrée&nbsp;&nbsp;:<br>
+Hauteur&nbsp;taille&nbsp;dans&nbsp;la&nbsp;premiere&nbsp;direction&nbsp;de&nbsp;la&nbsp;<a href="#carte">carte</a>&nbsp;(en&nbsp;case)<br>
+Largeur&nbsp;taille&nbsp;dans&nbsp;la&nbsp;deuxieme&nbsp;direction&nbsp;de&nbsp;la&nbsp;<a href="#carte">carte</a>&nbsp;(en&nbsp;case)<br>
+&nbsp;<br>
+genere&nbsp;:<br>
+tab&nbsp;:&nbsp;un&nbsp;tableau&nbsp;de&nbsp;Hauteur*Largeur&nbsp;cases&nbsp;à&nbsp;None<br>&nbsp;</tt></td></tr>
+<tr><td>&nbsp;</td>
+<td width="100%">Methods defined here:<br>
+<dl><dt><a name="carte-__init__"><strong>__init__</strong></a>(self, Hauteur, Largeur)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+
+<dl><dt><a name="carte-annuler_coup"><strong>annuler_coup</strong></a>(self)</dt><dd><tt>fonction&nbsp;qui&nbsp;restaure&nbsp;la&nbsp;configuration&nbsp;sauvegarder&nbsp;lors&nbsp;de&nbsp;l'appel&nbsp;de&nbsp;<a href="#carte-sauver_etat">sauver_etat</a>()</tt></dd></dl>
+
+<dl><dt><a name="carte-copie_carte"><strong>copie_carte</strong></a>(self)</dt><dd><tt>retourne&nbsp;une&nbsp;copie&nbsp;du&nbsp;tableau&nbsp;gerant&nbsp;la&nbsp;<a href="#carte">carte</a></tt></dd></dl>
+
+<dl><dt><a name="carte-lire_carte"><strong>lire_carte</strong></a>(self, nom_fichier)</dt><dd><tt>fonction&nbsp;qui&nbsp;permet&nbsp;de&nbsp;lire&nbsp;dans&nbsp;un&nbsp;fichier&nbsp;la&nbsp;<a href="#carte">carte</a>&nbsp;utilisée<br>
+entrée&nbsp;:&nbsp;&nbsp;un&nbsp;str&nbsp;qui&nbsp;contient&nbsp;le&nbsp;nom&nbsp;du&nbsp;fichier.&nbsp;attention&nbsp;le&nbsp;chemin&nbsp;dois&nbsp;être&nbsp;relatif</tt></dd></dl>
+
+<dl><dt><a name="carte-modifier_case"><strong>modifier_case</strong></a>(self, X, Y, nouvelle_case)</dt></dl>
+
+<dl><dt><a name="carte-redefinir_carte"><strong>redefinir_carte</strong></a>(self, nouvelle_carte)</dt></dl>
+
+<dl><dt><a name="carte-sauvegarder_carte"><strong>sauvegarder_carte</strong></a>(self, nom_fichier)</dt><dd><tt>fonction&nbsp;qui&nbsp;permet&nbsp;d'écrire&nbsp;dans&nbsp;un&nbsp;fichier&nbsp;la&nbsp;<a href="#carte">carte</a>&nbsp;&nbsp;génrée<br>
+entrée&nbsp;:&nbsp;&nbsp;un&nbsp;str&nbsp;qui&nbsp;contient&nbsp;le&nbsp;nom&nbsp;du&nbsp;fichier.&nbsp;attention&nbsp;le&nbsp;chemin&nbsp;dois&nbsp;être&nbsp;relatif</tt></dd></dl>
+
+<dl><dt><a name="carte-sauver_etat"><strong>sauver_etat</strong></a>(self)</dt><dd><tt>fonction&nbsp;qui&nbsp;enregistre&nbsp;la&nbsp;position&nbsp;actuelle.&nbsp;une&nbsp;sauvegarde&nbsp;est&nbsp;faites&nbsp;avant&nbsp;chaque&nbsp;evenement<br>
+a&nbsp;coupler&nbsp;avec&nbsp;<a href="#carte-annuler_coup">annuler_coup</a>()&nbsp;.</tt></dd></dl>
+
+<hr>
+Data descriptors defined here:<br>
+<dl><dt><strong>__dict__</strong></dt>
+<dd><tt>dictionary&nbsp;for&nbsp;instance&nbsp;variables&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+<dl><dt><strong>__weakref__</strong></dt>
+<dd><tt>list&nbsp;of&nbsp;weak&nbsp;references&nbsp;to&nbsp;the&nbsp;object&nbsp;(if&nbsp;defined)</tt></dd>
+</dl>
+</td></tr></table></td></tr></table>
+</body></html>
