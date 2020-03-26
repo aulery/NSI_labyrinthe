@@ -51,6 +51,7 @@ if __name__ == "__main__" :
              ,liste_des_regles
              ,liste_des_images)
     jeu.lancer_jeu()
+    print(le_joueur.stats)
 
     del Jeu
     del liste_des_images

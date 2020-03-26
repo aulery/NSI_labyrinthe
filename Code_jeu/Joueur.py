@@ -14,14 +14,15 @@ class joueur():
         * nom : le nom d'un joueur
         * X : position de depart sur l'axe X
         * Y : position de depart sur l'axe Y
-        * score : le score de depart du joueur    par default 0
+        * stats : statistiques du joueur
+        par default contient un "score" qui par defaut est a 0
         """
 
         super(joueur, self).__init__()
         self.nom = nom
         self.X = X
         self.Y = Y
-        self.score =score
+        self.stats ={"score":score}
         self.old_X = X
         self.old_Y = Y
 
