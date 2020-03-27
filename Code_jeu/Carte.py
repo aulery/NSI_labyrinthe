@@ -10,7 +10,7 @@ class carte() :
 
     attribue :
     Hauteur : hauteur de la carte
-    Largeur : largeur de la carte
+    Largeur : Largeur de la carte
     tab : un tableau de Hauteur*Largeur cases à None
     """
 
@@ -88,3 +88,6 @@ class carte() :
     def copie_carte(self):
         """ retourne une copie du tableau gerant la carte """
         return copy.copy(self.tab)
+
+    def dimensions(self):
+        return (self.Largeur,self.Hauteur)

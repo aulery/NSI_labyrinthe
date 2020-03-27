@@ -24,9 +24,9 @@ if __name__ == "__main__" :
     liste_des_regles = [on_ne_sort_pas_de_la_carte,victoire] # attention l'ordre compte
     liste_des_images = ['personnage.png'
                         ,'mur.png','fin.png'] # attention l'ordre compte
-    Nombre_cases_largeur = 20
+    Nombre_cases_Largeur = 20
     Nombre_cases_hauteur = 20
-    la_carte = carte(Nombre_cases_largeur,Nombre_cases_hauteur)
+    la_carte = carte(Nombre_cases_Largeur,Nombre_cases_hauteur)
 
     # generer ou lire la carte.
     # ici un exemple de comment s'y prendre pour faire une carte à la main.
@@ -40,18 +40,23 @@ if __name__ == "__main__" :
     # le joueur doit être sur une case vide.
     la_carte.modifier_case(position_de_depart_X,position_de_depart_Y,None)
     # le gagne s'il arrive a la position 5 , 5
-    la_carte.modifier_case(position_de_depart_X+2,position_de_depart_Y+3,2)
+    la_carte.modifier_case(position_de_depart_X+2,position_de_depart_Y+2,2)
     print(la_carte)
 
     le_joueur = joueur("player 1 ",position_de_depart_X,position_de_depart_Y,100)
 
-    jeu = Jeu(Nombre_cases_largeur
+    jeu = Jeu(Nombre_cases_Largeur
              ,Nombre_cases_hauteur
              ,la_carte,le_joueur
              ,liste_des_regles
              ,liste_des_images)
     jeu.lancer_jeu()
-    print(le_joueur.stats)
+
+    # des Statistiques sont accèssibles
+    statistiques = le_joueur.recuperer_statistiques()
+    print("votre score est de ",statistiques['score'])
+    # ou imprimer de maniere brute.
+    le_joueur.afficher_statistiques()
 
     del Jeu
     del liste_des_images

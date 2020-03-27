@@ -41,7 +41,7 @@
 <font color="#000000" face="helvetica, arial"><a name="joueur">class <strong>joueur</strong></a>(<a href="builtins.html#object">builtins.object</a>)</font></td></tr>
     
 <tr bgcolor="#ffc8d8"><td rowspan=2><tt>&nbsp;&nbsp;&nbsp;</tt></td>
-<td colspan=2><tt><a href="#joueur">joueur</a>(nom,&nbsp;X,&nbsp;Y)<br>
+<td colspan=2><tt><a href="#joueur">joueur</a>(nom,&nbsp;X,&nbsp;Y,&nbsp;score=0)<br>
 &nbsp;<br>
 docstring&nbsp;for&nbsp;<a href="#joueur">joueur</a>.<br>
 classe&nbsp;qui&nbsp;contient&nbsp;toute&nbsp;les&nbsp;informations&nbsp;sur&nbsp;le&nbsp;<a href="#joueur">joueur</a><br>
@@ -49,16 +49,28 @@ On&nbsp;accedera&nbsp;a&nbsp;sa&nbsp;position&nbsp;en&nbsp;faisant&nbsp;:<br>
 var_joueur.X&nbsp;et&nbsp;var_joueur.Y<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="joueur-__init__"><strong>__init__</strong></a>(self, nom, X, Y)</dt><dd><tt>initialisation&nbsp;rien&nbsp;de&nbsp;special</tt></dd></dl>
+<dl><dt><a name="joueur-__init__"><strong>__init__</strong></a>(self, nom, X, Y, score=0)</dt><dd><tt>initialisation<br>
+Entrée&nbsp;:<br>
+*&nbsp;nom&nbsp;:&nbsp;le&nbsp;nom&nbsp;d'un&nbsp;<a href="#joueur">joueur</a><br>
+*&nbsp;X&nbsp;:&nbsp;position&nbsp;de&nbsp;depart&nbsp;sur&nbsp;l'axe&nbsp;X<br>
+*&nbsp;Y&nbsp;:&nbsp;position&nbsp;de&nbsp;depart&nbsp;sur&nbsp;l'axe&nbsp;Y<br>
+*&nbsp;stats&nbsp;:&nbsp;statistiques&nbsp;du&nbsp;<a href="#joueur">joueur</a><br>
+par&nbsp;default&nbsp;contient&nbsp;un&nbsp;"score"&nbsp;qui&nbsp;par&nbsp;defaut&nbsp;est&nbsp;a&nbsp;0</tt></dd></dl>
 
 <dl><dt><a name="joueur-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>permet&nbsp;de&nbsp;faire&nbsp;print(<a href="#joueur">joueur</a>)&nbsp;directement</tt></dd></dl>
 
-<dl><dt><a name="joueur-annuler_coup"><strong>annuler_coup</strong></a>(self)</dt><dd><tt>fonction&nbsp;qui&nbsp;restaure&nbsp;la&nbsp;position&nbsp;sauvegarder&nbsp;lors&nbsp;de&nbsp;l'appel&nbsp;de&nbsp;<a href="#joueur-sauver_etat">sauver_etat</a>()</tt></dd></dl>
+<dl><dt><a name="joueur-afficher_statistiques"><strong>afficher_statistiques</strong></a>(self)</dt><dd><tt>affiche&nbsp;de&nbsp;maniere&nbsp;brute&nbsp;les&nbsp;statistiques</tt></dd></dl>
+
+<dl><dt><a name="joueur-annuler_coup"><strong>annuler_coup</strong></a> = fonction_avec_stat(self)</dt></dl>
 
 <dl><dt><a name="joueur-deplacer"><strong>deplacer</strong></a>(self, DX, DY)</dt><dd><tt>fonction&nbsp;pour&nbsp;deplacer&nbsp;un&nbsp;<a href="#joueur">joueur</a>&nbsp;dans&nbsp;la&nbsp;grille.<br>
 entrée&nbsp;:<br>
 DX&nbsp;deplacement&nbsp;dans&nbsp;la&nbsp;Largeur<br>
 DY&nbsp;deplacement&nbsp;dans&nbsp;la&nbsp;Hauteur</tt></dd></dl>
+
+<dl><dt><a name="joueur-position"><strong>position</strong></a>(self)</dt><dd><tt>Retourne&nbsp;un&nbsp;couple&nbsp;X,Y&nbsp;contenant&nbsp;la&nbsp;position&nbsp;du&nbsp;<a href="#joueur">joueur</a></tt></dd></dl>
+
+<dl><dt><a name="joueur-recuperer_statistiques"><strong>recuperer_statistiques</strong></a>(self)</dt><dd><tt>renvoi&nbsp;le&nbsp;dictionnaire&nbsp;des&nbsp;statistiques</tt></dd></dl>
 
 <dl><dt><a name="joueur-sauver_etat"><strong>sauver_etat</strong></a>(self)</dt><dd><tt>fonction&nbsp;qui&nbsp;enregistre&nbsp;la&nbsp;position&nbsp;actuelle.&nbsp;une&nbsp;sauvegarde&nbsp;est&nbsp;faites&nbsp;avant&nbsp;chaque&nbsp;evenement<br>
 a&nbsp;coupler&nbsp;avec&nbsp;<a href="#joueur-annuler_coup">annuler_coup</a>()&nbsp;.</tt></dd></dl>
