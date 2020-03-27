@@ -5,21 +5,6 @@ Ensemble de décorateur pour le suivi des statistiques
 Pas pour les elèves
 """
 
-def classe_avec_statistiques(init):
-
-    def init_avec_stats(self,*args, **kwargs):
-
-        self.stats
-        init(self,*args, **kwargs)
-        def afficher_statistiques(self):
-            """ affiche de maniere brute les statistiques """
-            print(self.stats)
-
-        def recuperer_Statistiques(self):
-            """ renvoi le dictionnaire des statistiques """
-            return self.stats
-    return init_avec_stats
-
 def suivi_statistiques_joueur(fonction):
     """
     decorateur pour le suivi des statistiques d'utilisation des Touches

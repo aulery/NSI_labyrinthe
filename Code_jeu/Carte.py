@@ -28,6 +28,7 @@ class carte() :
             self.tab.append(copy.copy(inter))
 
         self.old_tab = self.tab
+        self.stats = dict()
 
     def __str__(self):
         """ fonction qui permet d'afficher la carte dans la console """
@@ -90,4 +91,13 @@ class carte() :
         return copy.copy(self.tab)
 
     def dimensions(self):
+        """ retourne les dimensions de la carte dans un tuple"""
         return (self.Largeur,self.Hauteur)
+
+    def afficher_statistiques(self):
+        """ affiche de maniere brute les statistiques """
+        print(self.stats)
+
+    def recuperer_Statistiques(self):
+        """ renvoi le dictionnaire des statistiques """
+        return self.stats

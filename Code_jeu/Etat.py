@@ -1,7 +1,6 @@
 # coding: utf8
 # pensez a recopier l'encodage dans chaque fichier Python
-from Statistiques import classe_avec_statistiques
-@classe_avec_statistiques
+
 class Etat():
     """
     Contient l'etat de la partie
@@ -19,10 +18,18 @@ class Etat():
         """
         super(Etat, self).__init__()
         self.en_cours = True
-        #self.stats ={}
+        self.stats = dict()
 
     def fin_de_partie(self):
         """
         met l'attribut en cours a False
         """
         self.en_cours = False
+
+    def afficher_statistiques(self):
+        """ affiche de maniere brute les statistiques """
+        print(self.stats)
+
+    def recuperer_Statistiques(self):
+        """ renvoi le dictionnaire des statistiques """
+        return self.stats
