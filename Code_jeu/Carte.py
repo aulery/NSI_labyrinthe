@@ -10,7 +10,7 @@ class carte() :
 
     attribue :
     Hauteur : hauteur de la carte
-    Largeur : largeur de la carte
+    Largeur : Largeur de la carte
     tab : un tableau de Hauteur*Largeur cases à None
     """
 
@@ -28,6 +28,7 @@ class carte() :
             self.tab.append(copy.copy(inter))
 
         self.old_tab = self.tab
+        self.stats = dict()
 
     def __str__(self):
         """ fonction qui permet d'afficher la carte dans la console """
@@ -88,3 +89,15 @@ class carte() :
     def copie_carte(self):
         """ retourne une copie du tableau gerant la carte """
         return copy.copy(self.tab)
+
+    def dimensions(self):
+        """ retourne les dimensions de la carte dans un tuple"""
+        return (self.Largeur,self.Hauteur)
+
+    def afficher_statistiques(self):
+        """ affiche de maniere brute les statistiques """
+        print(self.stats)
+
+    def recuperer_Statistiques(self):
+        """ renvoi le dictionnaire des statistiques """
+        return self.stats

@@ -13,6 +13,14 @@
 #&nbsp;pensez&nbsp;a&nbsp;recopier&nbsp;l'encodage&nbsp;dans&nbsp;chaque&nbsp;fichier&nbsp;Python</tt></p>
 <p>
 <table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
+<tr bgcolor="#aa55cc">
+<td colspan=3 valign=bottom>&nbsp;<br>
+<font color="#ffffff" face="helvetica, arial"><big><strong>Modules</strong></big></font></td></tr>
+    
+<tr><td bgcolor="#aa55cc"><tt>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</tt></td><td>&nbsp;</td>
+<td width="100%"><table width="100%" summary="list"><tr><td width="25%" valign=top><a href="copy.html">copy</a><br>
+</td><td width="25%" valign=top></td><td width="25%" valign=top></td><td width="25%" valign=top></td></tr></table></td></tr></table><p>
+<table width="100%" cellspacing=0 cellpadding=2 border=0 summary="section">
 <tr bgcolor="#ee77aa">
 <td colspan=3 valign=bottom>&nbsp;<br>
 <font color="#ffffff" face="helvetica, arial"><big><strong>Classes</strong></big></font></td></tr>
@@ -40,15 +48,21 @@ Entrée&nbsp;&nbsp;:<br>
 Hauteur&nbsp;taille&nbsp;dans&nbsp;la&nbsp;premiere&nbsp;direction&nbsp;de&nbsp;la&nbsp;<a href="#carte">carte</a>&nbsp;(en&nbsp;case)<br>
 Largeur&nbsp;taille&nbsp;dans&nbsp;la&nbsp;deuxieme&nbsp;direction&nbsp;de&nbsp;la&nbsp;<a href="#carte">carte</a>&nbsp;(en&nbsp;case)<br>
 &nbsp;<br>
-genere&nbsp;:<br>
+attribue&nbsp;:<br>
+Hauteur&nbsp;:&nbsp;hauteur&nbsp;de&nbsp;la&nbsp;<a href="#carte">carte</a><br>
+Largeur&nbsp;:&nbsp;Largeur&nbsp;de&nbsp;la&nbsp;<a href="#carte">carte</a><br>
 tab&nbsp;:&nbsp;un&nbsp;tableau&nbsp;de&nbsp;Hauteur*Largeur&nbsp;cases&nbsp;à&nbsp;None<br>&nbsp;</tt></td></tr>
 <tr><td>&nbsp;</td>
 <td width="100%">Methods defined here:<br>
-<dl><dt><a name="carte-__init__"><strong>__init__</strong></a>(self, Hauteur, Largeur)</dt><dd><tt>Initialize&nbsp;self.&nbsp;&nbsp;See&nbsp;help(type(self))&nbsp;for&nbsp;accurate&nbsp;signature.</tt></dd></dl>
+<dl><dt><a name="carte-__init__"><strong>__init__</strong></a>(self, Hauteur, Largeur)</dt><dd><tt>initialisation&nbsp;de&nbsp;la&nbsp;<a href="#carte">carte</a></tt></dd></dl>
+
+<dl><dt><a name="carte-__str__"><strong>__str__</strong></a>(self)</dt><dd><tt>fonction&nbsp;qui&nbsp;permet&nbsp;d'afficher&nbsp;la&nbsp;<a href="#carte">carte</a>&nbsp;dans&nbsp;la&nbsp;console</tt></dd></dl>
 
 <dl><dt><a name="carte-annuler_coup"><strong>annuler_coup</strong></a>(self)</dt><dd><tt>fonction&nbsp;qui&nbsp;restaure&nbsp;la&nbsp;configuration&nbsp;sauvegarder&nbsp;lors&nbsp;de&nbsp;l'appel&nbsp;de&nbsp;<a href="#carte-sauver_etat">sauver_etat</a>()</tt></dd></dl>
 
 <dl><dt><a name="carte-copie_carte"><strong>copie_carte</strong></a>(self)</dt><dd><tt>retourne&nbsp;une&nbsp;copie&nbsp;du&nbsp;tableau&nbsp;gerant&nbsp;la&nbsp;<a href="#carte">carte</a></tt></dd></dl>
+
+<dl><dt><a name="carte-dimensions"><strong>dimensions</strong></a>(self)</dt></dl>
 
 <dl><dt><a name="carte-lire_carte"><strong>lire_carte</strong></a>(self, nom_fichier)</dt><dd><tt>fonction&nbsp;qui&nbsp;permet&nbsp;de&nbsp;lire&nbsp;dans&nbsp;un&nbsp;fichier&nbsp;la&nbsp;<a href="#carte">carte</a>&nbsp;utilisée<br>
 entrée&nbsp;:&nbsp;&nbsp;un&nbsp;str&nbsp;qui&nbsp;contient&nbsp;le&nbsp;nom&nbsp;du&nbsp;fichier.&nbsp;attention&nbsp;le&nbsp;chemin&nbsp;dois&nbsp;être&nbsp;relatif</tt></dd></dl>
@@ -60,7 +74,8 @@ entrée&nbsp;:&nbsp;&nbsp;un&nbsp;str&nbsp;qui&nbsp;contient&nbsp;le&nbsp;nom&nb
 <dl><dt><a name="carte-sauvegarder_carte"><strong>sauvegarder_carte</strong></a>(self, nom_fichier)</dt><dd><tt>fonction&nbsp;qui&nbsp;permet&nbsp;d'écrire&nbsp;dans&nbsp;un&nbsp;fichier&nbsp;la&nbsp;<a href="#carte">carte</a>&nbsp;&nbsp;génrée<br>
 entrée&nbsp;:&nbsp;&nbsp;un&nbsp;str&nbsp;qui&nbsp;contient&nbsp;le&nbsp;nom&nbsp;du&nbsp;fichier.&nbsp;attention&nbsp;le&nbsp;chemin&nbsp;dois&nbsp;être&nbsp;relatif</tt></dd></dl>
 
-<dl><dt><a name="carte-sauver_etat"><strong>sauver_etat</strong></a>(self)</dt><dd><tt>fonction&nbsp;qui&nbsp;enregistre&nbsp;la&nbsp;position&nbsp;actuelle.&nbsp;une&nbsp;sauvegarde&nbsp;est&nbsp;faites&nbsp;avant&nbsp;chaque&nbsp;evenement<br>
+<dl><dt><a name="carte-sauver_etat"><strong>sauver_etat</strong></a>(self)</dt><dd><tt>fonction&nbsp;qui&nbsp;enregistre&nbsp;la&nbsp;position&nbsp;actuelle.<br>
+Une&nbsp;sauvegarde&nbsp;est&nbsp;faites&nbsp;avant&nbsp;chaque&nbsp;evenement<br>
 a&nbsp;coupler&nbsp;avec&nbsp;<a href="#carte-annuler_coup">annuler_coup</a>()&nbsp;.</tt></dd></dl>
 
 <hr>

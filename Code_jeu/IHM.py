@@ -30,10 +30,10 @@ class Jeu():
         """
         return pygame.image.load(os.path.join(repertoire,nom)).convert_alpha()
 
-    def __init__(self, Nombre_cases_largeur,Nombre_cases_hauteur,la_carte,le_joueur,liste_des_regles,liste_des_images):
+    def __init__(self, Nombre_cases_Largeur,Nombre_cases_hauteur,la_carte,le_joueur,liste_des_regles,liste_des_images):
         """ fonction d'initialisation de l'interface graphique.
         Entree :
-        * Nombre_cases_largeur type int
+        * Nombre_cases_Largeur type int
         * Nombre_cases_hauteur type int
         * la_carte represente la carte en utilisant la classe carte
         * le_joueur represente le joueur en utilisant la classe joueur_apres
@@ -42,7 +42,7 @@ class Jeu():
         Par default une case de carte fait 20x20px
         """
         super(Jeu, self).__init__()
-        self.Largeur = Nombre_cases_largeur
+        self.Largeur = Nombre_cases_Largeur
         self.Hauteur = Nombre_cases_hauteur
         self.carte   = la_carte
         self.joueur  = le_joueur

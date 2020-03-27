@@ -6,26 +6,30 @@ Ensemble des regles du jeu, tout impact sur le jeu
 dois se faire au travers des classes en argument
 par default il s'agit de carte et joueur
 """
+from Statistiques import ajout_statistique_ponctuelle
 
-def on_ne_sort_pas_de_la_carte(carte_apres,joueur_apres,etat_du_jeu) :
+def on_ne_sort_pas_de_la_carte(carte,joueur,etat_du_jeu) :
     """
     Fonction qui interdit le mouvement si le joueur depasse les bords de la carte.
     Pour MODELISER CECI, on restaure le joueur précédent
     """
-    on_depasse_sur_X =  joueur_apres.X < 0  or joueur_apres.X >= carte_apres.Largeur
-    on_depasse_sur_Y =  joueur_apres.Y < 0  or joueur_apres.Y >= carte_apres.Hauteur
+    X,Y = joueur.position()
+    Max_X, Max_Y = carte.dimensions()
+    on_depasse_sur_X =  (X < 0)  or (X >= Max_X)
+    on_depasse_sur_Y =  (Y < 0)  or (Y >= Max_Y)
 
     if on_depasse_sur_X or on_depasse_sur_Y:
-        joueur_apres.annuler_coup()
+        joueur.annuler_coup()
 
 def victoire(carte,joueur,etat_du_jeu) :
     """
     Fonction qui donne la victoire quand le joueur touche l'arrivée sur la case de victoire.
     """
-    position_X, position_Y = joueur.X, joueur.Y
-    if carte.tab[position_X][position_Y] == 2 :
+    X, Y = joueur.position()
+    if carte.tab[X][Y] == 2 :
         print("le joueur a gagné")
-        etat_du_jeu.en_cours = False
+        ajout_statistique_ponctuelle(joueur,"Victoire")
+        etat_du_jeu.fin_de_partie()
 
 def compter_deplacement(carte,joueur,etat_du_jeu):
     """

@@ -1,6 +1,8 @@
 # coding: utf8
 # pensez a recopier l'encodage dans chaque fichier Python
 import copy
+
+from Statistiques import suivi_statistiques_interne
 class joueur():
     """docstring for joueur.
     classe qui contient toute les informations sur le joueur
@@ -43,13 +45,10 @@ class joueur():
         self.X = self.X + DX
         self.Y = self.Y + DY
 
+    @suivi_statistiques_interne
     def annuler_coup(self):
         """ fonction qui restaure la position sauvegarder lors de l'appel de sauver_etat()
         """
-        if "coup(s) annulé(s)" in self.stats :
-            self.stats["coup annulé"] +=1
-        else :
-            self.stats["coup annulé"] =1
         self.X = self.old_X
         self.Y = self.old_Y
 
@@ -59,3 +58,15 @@ class joueur():
         """
         self.old_X = self.X
         self.old_Y = self.Y
+
+    def position(self):
+        """ Retourne un couple X,Y contenant la position du joueur """
+        return (self.X,self.Y)
+
+    def afficher_statistiques(self):
+        """ affiche de maniere brute les statistiques """
+        print(self.stats)
+
+    def recuperer_statistiques(self):
+        """ renvoi le dictionnaire des statistiques """
+        return self.stats
