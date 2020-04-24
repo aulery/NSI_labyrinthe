@@ -1,4 +1,6 @@
-import Etat
+import sys
+sys.path.append("..")
+from Code_jeu import Etat
 
 etat_de_test  = Etat.Etat()
 
