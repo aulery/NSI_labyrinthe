@@ -2,7 +2,7 @@
 # pensez a recopier l'encodage dans chaque fichier Python
 """
 Ensemble de décorateur pour le suivi des statistiques
-Pas pour les elèves
+Pas pour les elèves donc pas de test unitaires.
 """
 
 def suivi_statistiques_joueur(fonction):

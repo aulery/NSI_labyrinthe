@@ -21,9 +21,11 @@ if __name__ == "__main__" :
     from Joueur import joueur
     from Regles import *
 
-    liste_des_regles = [on_ne_sort_pas_de_la_carte,victoire] # attention l'ordre compte
+    liste_des_regles = [on_ne_sort_pas_de_la_carte
+                       ,victoire] # attention l'ordre compte
     liste_des_images = ['personnage.png'
-                        ,'mur.png','fin.png'] # attention l'ordre compte
+                       ,'mur.png'
+                       ,'fin.png'] # attention l'ordre compte
     Nombre_cases_Largeur = 20
     Nombre_cases_hauteur = 20
     la_carte = carte(Nombre_cases_Largeur,Nombre_cases_hauteur)
@@ -53,10 +55,12 @@ if __name__ == "__main__" :
     jeu.lancer_jeu()
 
     # des Statistiques sont accèssibles
-    statistiques = le_joueur.recuperer_statistiques()
-    print("votre score est de ",statistiques['score'])
+    statistiques_joueur = le_joueur.recuperer_statistiques()
+    statistiques_carte = la_carte.recuperer_statistiques()
+    print("votre score est de ",statistiques_joueur['score'])
     # ou imprimer de maniere brute.
     le_joueur.afficher_statistiques()
+    la_carte.afficher_statistiques()
 
     del Jeu
     del liste_des_images
