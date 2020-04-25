@@ -22,12 +22,12 @@ class carte() :
 
         # construction du tableau tab, par append car par comprehension des effets
         # de bords apparaisent
-        self.tab = []
+        self.tableau_cases = []
         inter = Hauteur*[None]
         for i in range(Largeur):
-            self.tab.append(copy.copy(inter))
+            self.tableau_cases.append(copy.copy(inter))
 
-        self.old_tab = self.tab
+        self.old_tableau_cases = self.tableau_cases
         self.stats = dict()
 
     def __str__(self):
@@ -35,18 +35,18 @@ class carte() :
         NE PAS TOUCHER !!!!!
         """
         chaine_globale = "Impression de la carte\n"
-        for j in range (len(self.tab[0])):
-            for i in range(len(self.tab)) :
-                if self.tab[i][j] is None :
+        for j in range (len(self.tableau_cases[0])):
+            for i in range(len(self.tableau_cases)) :
+                if self.tableau_cases[i][j] is None :
                     chaine_globale += " "
                 else :
-                    chaine_globale +=str(self.tab[i][j])
+                    chaine_globale +=str(self.tableau_cases[i][j])
             chaine_globale += "\n"
         chaine_globale += "Fin de la carte"
         return chaine_globale
 
     def modifier_case(self,X,Y,nouvelle_case):
-        self.tab[X][Y]= nouvelle_case
+        self.tableau_cases[X][Y]= nouvelle_case
 
     def redefinir_carte(self,nouvelle_carte) :
         try :
@@ -54,21 +54,21 @@ class carte() :
         except :
             self.assert_(False, "la nouvelle carte n'est pas 2D")
 
-        assert len(nouvelle_carte) == len(self.tab)
-        assert len(nouvelle_carte[0]) == len(self.tab[0])
-        self.tab = copy.copy(nouvelle_carte)
+        assert len(nouvelle_carte) == len(self.tableau_cases)
+        assert len(nouvelle_carte[0]) == len(self.tableau_cases[0])
+        self.tableau_cases = copy.copy(nouvelle_carte)
 
     def sauver_etat(self):
         """ fonction qui enregistre la position actuelle.
         Une sauvegarde est faites avant chaque evenement
         a coupler avec annuler_coup() .
         """
-        self.old_tab = self.tab
+        self.old_tableau_cases = self.tableau_cases
 
     def annuler_coup(self):
         """ fonction qui restaure la configuration sauvegarder lors de l'appel de sauver_etat()
         """
-        self.tab = self.old_tab
+        self.tableau_cases = self.old_tableau_cases
 
     def lire_carte(self,nom_fichier):
         """
@@ -90,7 +90,7 @@ class carte() :
 
     def copie_carte(self):
         """ retourne une copie du tableau gerant la carte """
-        return copy.copy(self.tab)
+        return copy.copy(self.tableau_cases)
 
     def dimensions(self):
         """ retourne les dimensions de la carte dans un tuple"""

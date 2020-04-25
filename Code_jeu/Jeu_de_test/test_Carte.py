@@ -8,18 +8,18 @@ def test_creation():
     carte_de_test = Carte.carte(3,4)
     assert carte_de_test.Largeur == 3
     assert carte_de_test.Hauteur == 4
-    assert carte_de_test.tab == [[None,None,None,None]
+    assert carte_de_test.tableau_cases == [[None,None,None,None]
                                 ,[None,None,None,None]
                                 ,[None,None,None,None]]
     assert carte_de_test.stats == dict()
-    assert carte_de_test.old_tab == [[None,None,None,None]
+    assert carte_de_test.old_tableau_cases == [[None,None,None,None]
                                     ,[None,None,None,None]
                                     ,[None,None,None,None]]
 
 def test_modifier_case():
     carte_de_test = Carte.carte(1,1)
     carte_de_test.modifier_case(0,0,1)
-    assert carte_de_test.tab[0][0] == 1
+    assert carte_de_test.tableau_cases[0][0] == 1
 
 def test_dimension():
     carte_de_test = Carte.carte(47,23)

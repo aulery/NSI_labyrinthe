@@ -26,7 +26,7 @@ def victoire(carte,joueur,etat_du_jeu) :
     Fonction qui donne la victoire quand le joueur touche l'arrivée sur la case de victoire.
     """
     X, Y = joueur.position()
-    if carte.tab[X][Y] == 2 :
+    if carte.tableau_cases[X][Y] == "arrivée" :
         print("le joueur a gagné")
         ajout_statistique_ponctuelle(joueur,"Victoire")
         etat_du_jeu.fin_de_partie()

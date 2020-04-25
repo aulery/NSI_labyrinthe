@@ -23,9 +23,9 @@ if __name__ == "__main__" :
 
     liste_des_regles = [on_ne_sort_pas_de_la_carte
                        ,victoire] # attention l'ordre compte
-    liste_des_images = ['personnage.png'
-                       ,'mur.png'
-                       ,'fin.png'] # attention l'ordre compte
+    liste_des_images = [("personnage",'personnage.png')
+                       ,("mur",'mur.png')
+                       ,("arrivée",'fin.png')] # attention l'ordre compte
     Nombre_cases_Largeur = 20
     Nombre_cases_hauteur = 20
     la_carte = carte(Nombre_cases_Largeur,Nombre_cases_hauteur)
@@ -36,13 +36,13 @@ if __name__ == "__main__" :
 
     tableau_carte = la_carte.copie_carte() # on recopie le tableau pour le modifier.
     for colonne in tableau_carte:
-        colonne[8] = 1 # on met un mur.
+        colonne[8] = "mur" # on met un mur.
 
     la_carte.redefinir_carte(tableau_carte)
     # le joueur doit être sur une case vide.
     la_carte.modifier_case(position_de_depart_X,position_de_depart_Y,None)
     # le gagne s'il arrive a la position 5 , 5
-    la_carte.modifier_case(position_de_depart_X+2,position_de_depart_Y+2,2)
+    la_carte.modifier_case(position_de_depart_X+2,position_de_depart_Y+2,"arrivée")
     print(la_carte)
 
     le_joueur = joueur("player 1 ",position_de_depart_X,position_de_depart_Y,100)
