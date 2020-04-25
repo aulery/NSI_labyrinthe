@@ -11,6 +11,8 @@ S'il ne sont pas déja installé la commande est :
   - pip install pygame
   - pip install pytest
 
+# Utilisation de git
+Le code est accéssible
 
 # Structure du projet :
   - Code_jeu : contient le code python du jeu
@@ -30,10 +32,13 @@ Dans le repertoire Code_jeu, taper la commande  :
 - Sur linux : python3 main.py
 - Sur windows : py main.py
 
-# lancer le site web
+# Lancer le site web
 Dans le repertoire Site_web, taper la commande :
 - Sur linux : python3 site_web.py
 - Sur windows : py site_web.py
+Pour accéder au site web, ouvrir le navigateur et accéder à la page :
+http://localhost:5000/
+
 
 # Exécuter les tests de validation
 Dans le repertoire Code_jeu, taper la commande  :
