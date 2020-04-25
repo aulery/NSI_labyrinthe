@@ -1,6 +1,7 @@
 # -*- coding: <encoding name> -*-
 """
 Module qui gere l'affichage graphique.
+Les élèves n'ont pas besoin de travailler ici, tout se gère dans le main.
 """
 # coding=utf8
 # pensez a recopier l'encodage dans chaque fichier Python
@@ -65,17 +66,17 @@ class Jeu():
                     K_RIGHT:gauche,
                     K_d:gauche}
         self.images = dict()
-        for i,img in enumerate(liste_des_images) :
-            self.images[i]= self.importer_image_transparente(img)
+        for cle, img  in liste_des_images :
+            self.images[cle]= self.importer_image_transparente(img)
 
-    def coller_image(self,numero,X,Y) : # attention l'ordre compte
+    def coller_image(self,cle_image,X,Y) : # attention l'ordre compte
         """ Fonction qui position une image dans la fenetre
         entree :
             * numero de l'image prechargee.
             * coordonee X sur la grille
             * coordonee Y sur la grille
             """
-        self.fenetre.blit(self.images[numero]
+        self.fenetre.blit(self.images[cle_image]
                          ,(self.Taille_case_pixel*X,self.Taille_case_pixel*Y))
 
     def gerer_evenement(self):
@@ -102,11 +103,11 @@ class Jeu():
         3 - coller le personnage
         """
         self.fenetre.fill((0,0,0))
-        for i,colonne in enumerate(self.carte.tab) :
-            for j, numero_image in enumerate(colonne) :
-                if numero_image is not None:
-                    self.coller_image(numero_image,i,j)
-        self.coller_image(0,self.joueur.X,self.joueur.Y)
+        for i,colonne in enumerate(self.carte.tableau_cases) :
+            for j, cle_image in enumerate(colonne) :
+                if cle_image is not None:
+                    self.coller_image(cle_image,i,j)
+        self.coller_image("personnage",self.joueur.X,self.joueur.Y)
 
     def lancer_jeu(self):
         """ boucle de jeu a proprement parler elle suis le schema de description de la classe"""

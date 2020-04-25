@@ -28,10 +28,10 @@ def test_victoire():
     joueur_de_test  = Joueur.joueur("toto",1,0)
     etat_de_test = Etat.Etat()
 
-    carte_de_test.modifier_case(1,0,1)
+    carte_de_test.modifier_case(1,0,"personnage")
     Regles.victoire(carte_de_test,joueur_de_test,etat_de_test)
     assert etat_de_test.en_cours == True
 
-    carte_de_test.modifier_case(1,0,2)
+    carte_de_test.modifier_case(1,0,"arrivée")
     Regles.victoire(carte_de_test,joueur_de_test,etat_de_test)
     assert etat_de_test.en_cours == False
