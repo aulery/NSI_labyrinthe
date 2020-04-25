@@ -14,7 +14,7 @@ class carte() :
     tab : un tableau de Hauteur*Largeur cases à None
     """
 
-    def __init__(self,Hauteur,Largeur):
+    def __init__(self,Largeur,Hauteur):
         """ initialisation de la carte """
         super(carte,self).__init__()
         self.Hauteur = Hauteur
@@ -23,15 +23,17 @@ class carte() :
         # construction du tableau tab, par append car par comprehension des effets
         # de bords apparaisent
         self.tab = []
-        inter = Largeur*[None]
-        for i in range(Hauteur):
+        inter = Hauteur*[None]
+        for i in range(Largeur):
             self.tab.append(copy.copy(inter))
 
         self.old_tab = self.tab
         self.stats = dict()
 
     def __str__(self):
-        """ fonction qui permet d'afficher la carte dans la console """
+        """ fonction qui permet d'afficher la carte dans la console
+        NE PAS TOUCHER !!!!!
+        """
         chaine_globale = "Impression de la carte\n"
         for j in range (len(self.tab[0])):
             for i in range(len(self.tab)) :
@@ -98,6 +100,6 @@ class carte() :
         """ affiche de maniere brute les statistiques """
         print(self.stats)
 
-    def recuperer_Statistiques(self):
+    def recuperer_statistiques(self):
         """ renvoi le dictionnaire des statistiques """
         return self.stats

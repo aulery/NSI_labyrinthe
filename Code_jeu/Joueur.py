@@ -20,6 +20,8 @@ class joueur():
         par default contient un "score" qui par defaut est a 0
         """
 
+        assert type(X) is int, "X doit être entier"
+        assert type(Y) is int, "Y doit être entier"
         super(joueur, self).__init__()
         self.nom = nom
         self.X = X

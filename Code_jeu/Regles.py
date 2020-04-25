@@ -31,8 +31,8 @@ def victoire(carte,joueur,etat_du_jeu) :
         ajout_statistique_ponctuelle(joueur,"Victoire")
         etat_du_jeu.fin_de_partie()
 
-def compter_deplacement(carte,joueur,etat_du_jeu):
+def decompter_deplacement(carte,joueur,etat_du_jeu):
     """
-    Fonction du modifie le score si le joueur c'est deplacer
+    Fonction du modifie le score si le joueur s'est deplacer
     """
     pass
