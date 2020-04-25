@@ -30,6 +30,6 @@ class Etat():
         """ affiche de maniere brute les statistiques """
         print(self.stats)
 
-    def recuperer_Statistiques(self):
+    def recuperer_statistiques(self):
         """ renvoi le dictionnaire des statistiques """
         return self.stats
