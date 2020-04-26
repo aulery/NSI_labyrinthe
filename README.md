@@ -12,19 +12,31 @@ S'il ne sont pas déja installé la commande est :
   - pip install pytest
 
 # Utilisation de git
-Le code est accéssible
+Le code est accessible à l'adresse :  
+https://github.com/aulery/NSI_labyrinthe.git
+pour le copier localement et travailler taper :
+- Aller dans le répertoire ou vous voulez copier le projet :
+- Tapez : git clone https://github.com/aulery/NSI_labyrinthe.git
+- Se créer un compte sur le site de github
+- Lancer Atom et faire ouvrir un dossier dans le répertoire que vous venez de télécharger.
+- Avec Atom Créer une branche pour vous et lancez vous dans l'aventure.
+
 
 # Structure du projet :
   - Code_jeu : contient le code python du jeu
       * images : contient les images qui seront utilisée pour le jeu.
-      * jeu_de_test : contient les codes python des test unitaires fait avec pytest
-  - Site_Web : contient un exemple minimal d'un site web gérer avec flask
+      * jeu_de_test : contient les codes python des test unitaires fait avec Pytest
+  - Site_Web : contient un exemple minimal d'un site web gérer avec Fflask
       * static : contient les images du site web
-          + Documentation : contient la documentation autogénéré par python
-      * templates : contients les templates utilisée par flask
+          + Documentation : contient la documentation autogénérée par python
+      * templates : contient les modèles  utilisés par Flask
 
 # Générer la documentation
-Exécuter le script generer_documentation.sh pour que python génère une série de pages web utilisable reprenant toute la documentation du code.
+Pour que python génère une série de pages web reprenant la documentation incluse dans le code, exécuter le script prévu à cet effet :
+- Sur linux : generer_documentation_linux.sh
+- Sur windows : generer_documentation_win.sh
+
+
 La documentation est mise dans Site_Web/static/Documentation
 
 # Exécuter le jeu

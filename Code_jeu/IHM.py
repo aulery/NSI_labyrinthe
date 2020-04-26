@@ -9,7 +9,7 @@ Les élèves n'ont pas besoin de travailler ici, tout se gère dans le main.
 import os
 import pygame # import total on limitera plus tard les besoins au minimum
 from pygame.locals import * # pas obligatoire mais plus simple
-from Touches import *
+from Actions import *
 from Etat import *
 class Jeu():
     """ Classe qui gere le jeu.

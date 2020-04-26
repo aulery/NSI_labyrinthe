@@ -33,3 +33,11 @@ class Etat():
     def recuperer_statistiques(self):
         """ renvoi le dictionnaire des statistiques """
         return self.stats
+        
+    def remplacer_statistiques(self,dictionnaire_des_statistiques):
+        """ remplace les statistiques par un nouveau jeu complet """
+        self.stats = copy.copy(dictionnaire_des_statistiques)
+
+    def modifier_statistiques(self,cle, valeur):
+        """ remplace le valeur d'une statistique par une nouvelle """
+        self.stats[cle] = valeur
