@@ -4,7 +4,7 @@
 Ensemble de décorateur pour le suivi des statistiques
 Pas pour les elèves donc pas de test unitaires.
 """
-
+from functools import wraps
 def suivi_statistiques_joueur(fonction):
     """
     decorateur pour le suivi des statistiques d'utilisation des Touches
@@ -13,6 +13,7 @@ def suivi_statistiques_joueur(fonction):
     dans l'absolue je devrai creer un décorateur' ou une super classe
     afin d'inclure automatiquement le suivi.
     """
+    @wraps(fonction)
     def fonction_avec_stat(carte,personnage,etat):
         if fonction.__name__ in personnage.stats :
             personnage.stats[fonction.__name__] +=1
@@ -25,6 +26,7 @@ def suivi_statistiques_interne(fonction):
     """
     decorateur pour le suivi des statistiques d'utilisation des Touches par un joueur
     """
+    @wraps(fonction)
     def fonction_avec_stat(self):
         if fonction.__name__ in self.stats :
             self.stats[fonction.__name__] +=1

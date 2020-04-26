@@ -42,6 +42,11 @@ def test_position():
     joueur_de_test  = Joueur.joueur("toto",12,189)
     assert joueur_de_test.position() == (12,189)
 
+def test_modifier_statistiques():
+    joueur_de_test  = Joueur.joueur("toto",12,189)
+    joueur_de_test.modifier_statistiques("cle_de_test2",2123)
+    assert joueur_de_test.recuperer_statistiques() == {"score":0,"cle_de_test2":2123}
+
 def test_recuperer_statistiques():
     joueur_de_test  = Joueur.joueur("toto",12,189)
     joueur_de_test.stats["cle_de_test"] = 123

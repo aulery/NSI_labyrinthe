@@ -70,24 +70,6 @@ class carte() :
         """
         self.tableau_cases = self.old_tableau_cases
 
-    def lire_carte(self,nom_fichier):
-        """
-        fonction qui permet de lire dans un fichier la carte utilisée
-        entrée :  un str qui contient le nom du fichier. attention le chemin dois être relatif
-        """
-        with  open(nom_fichier, "r") as fichier :
-            contenu = fichier.read()
-            print(contenu)
-
-    def sauvegarder_carte(self,nom_fichier):
-        """
-        fonction qui permet d'écrire dans un fichier la carte  génrée
-        entrée :  un str qui contient le nom du fichier. attention le chemin dois être relatif
-        """
-        with  open(nom_fichier, "w") as fichier :
-            chaine = str(self.Hauteur) + " " + str(self.Largeur) + "\n"
-            fichier.write(chaine)
-
     def copie_carte(self):
         """ retourne une copie du tableau gerant la carte """
         return copy.copy(self.tableau_cases)
@@ -103,3 +85,11 @@ class carte() :
     def recuperer_statistiques(self):
         """ renvoi le dictionnaire des statistiques """
         return self.stats
+
+    def remplacer_statistiques(self,dictionnaire_des_statistiques):
+        """ remplace les statistiques par un nouveau jeu complet """
+        self.stats = copy.copy(dictionnaire_des_statistiques)
+
+    def modifier_statistiques(self,cle, valeur):
+        """ remplace le valeur d'une statistique par une nouvelle """
+        self.stats[cle] = valeur

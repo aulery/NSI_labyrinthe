@@ -39,11 +39,15 @@ def test_redefinir_carte():
     carte_de_test.redefinir_carte(nouvelle_carte)
     assert carte_de_test.copie_carte() == [[0,1],[2,3]]
 
+def test_modifier_statistiques():
+    carte_de_test = Carte.carte(2,2)
+    carte_de_test.modifier_statistiques("cle_de_test2",2123)
+    assert carte_de_test.recuperer_statistiques() == {"cle_de_test2":2123}
 
 def test_recuperer_statistiques():
     carte_de_test = Carte.carte(2,2)
-    carte_de_test.stats["cle_de_test"] = 123
-    carte_de_test.stats["cle_de_test2"] = 2123
+    carte_de_test.modifier_statistiques("cle_de_test",123)
+    carte_de_test.modifier_statistiques("cle_de_test2",2123)
     assert carte_de_test.recuperer_statistiques() == {"cle_de_test":123,"cle_de_test2":2123}
 
 def test_impression():

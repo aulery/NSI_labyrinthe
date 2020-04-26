@@ -12,6 +12,33 @@ Il suit la logique suivante :
 7 - destructions des objets créer pour assurer qu'il n'y a pas de problemes
 
 """
+def lire_carte(nom_fichier):
+    """
+    fonction qui permet de lire dans un fichier la carte utilisée
+    entrée :  un str qui contient le nom du fichier. attention le chemin dois être relatif
+    """
+    with  open(nom_fichier, "r") as fichier :
+        contenu = fichier.read()
+        print(contenu)
+        taille_X_lue = 2
+        taille_Y_lue = 1
+        statistiques_lues = dict()
+        tableau_des_cases_lue = [[0],[0]]
+        carte_lue = carte(taille_X_lue,taille_Y_lue)
+        carte.remplacer_statistiques(statistiques_lues)
+        carte.redefinir_carte(tableau_des_cases_lue)
+
+def sauvegarder_carte(carte,nom_fichier):
+    """
+    fonction qui permet d'écrire dans un fichier la carte  génrée
+    entrée :  un str qui contient le nom du fichier. attention le chemin dois être relatif
+    """
+    X,Y = carte.dimensions()
+    Tableau_des_cases = carte.copie_carte()
+    statistiques = carte.recuperer_statistiques()
+    with  open(nom_fichier, "w") as fichier :
+        chaine = str(X) + " " + str(Y) + "\n"
+        fichier.write(chaine)
 
 # fichier principal ou qui servira de base pour le jeu
 
@@ -31,6 +58,7 @@ if __name__ == "__main__" :
     la_carte = carte(Nombre_cases_Largeur,Nombre_cases_hauteur)
 
     # generer ou lire la carte.
+    # lire_carte("monfichier_de_niveau.map")
     # ici un exemple de comment s'y prendre pour faire une carte à la main.
     position_de_depart_X,position_de_depart_Y  =  0 , 0
 
@@ -61,7 +89,8 @@ if __name__ == "__main__" :
     # ou imprimer de maniere brute.
     le_joueur.afficher_statistiques()
     la_carte.afficher_statistiques()
-
+    # fonction de sauvegarde de la carte a completer
+    sauvegarder_carte(la_carte,"carte.map")
     del Jeu
     del liste_des_images
     del liste_des_regles
