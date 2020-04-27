@@ -42,6 +42,11 @@ def test_position():
     joueur_de_test  = Joueur.joueur("toto",12,189)
     assert joueur_de_test.position() == (12,189)
 
+def test_ancienne_position():
+    joueur_de_test  = Joueur.joueur("toto",12,189)
+    joueur_de_test.deplacer(1,1)
+    assert joueur_de_test.ancienne_position() == (12,189)
+
 def test_modifier_statistiques():
     joueur_de_test  = Joueur.joueur("toto",12,189)
     joueur_de_test.modifier_statistiques("cle_de_test2",2123)

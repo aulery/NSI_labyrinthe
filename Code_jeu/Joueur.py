@@ -65,6 +65,10 @@ class joueur():
         """ Retourne un couple X,Y contenant la position du joueur """
         return (self.X,self.Y)
 
+    def ancienne_position(self):
+        """ Retourne un couple X,Y contenant la position du joueur au coup précédent"""
+        return (self.old_X,self.old_Y)
+
     def afficher_statistiques(self):
         """ affiche de maniere brute les statistiques """
         print(self.stats)
